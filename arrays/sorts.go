@@ -10,8 +10,10 @@ func SortIntAsc(a int, b int) bool {
 	return a > b
 }
 
+type ShouldLRSwap[T any] func(T, T) bool
+
 // slrs => should left <=> right swap?
-func SortBubble[T comparable](arr *[]T, slrs func(T, T) bool) {
+func SortBubble[T any](arr *[]T, slrs ShouldLRSwap[T]) {
 	n := len(*arr)
 	for i := range n - 1 {
 		swapped := false
@@ -26,6 +28,19 @@ func SortBubble[T comparable](arr *[]T, slrs func(T, T) bool) {
 
 		if !swapped {
 			break
+		}
+	}
+}
+
+func SortInsertion[T any](arr *[]T, slrs ShouldLRSwap[T]) {
+	n := len(*arr)
+	for i := 1; i < n; i++ {
+		for j := range i {
+			shouldSwap := slrs((*arr)[i-j-1], (*arr)[i-j])
+			if !shouldSwap {
+				break
+			}
+			swap(arr, i-j, i-j-1)
 		}
 	}
 }
