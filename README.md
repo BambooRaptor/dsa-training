@@ -9,13 +9,19 @@
 
 ### 📦 Arrays & Slices
 - **Operations**
-  - Declaration and initialization
-  - Element access/modification
-  - Iteration and slicing
-  - Memory management
+  - [x] Declaration and initialization
+  - [x] Element access/modification
+  - [x] Iteration and slicing
+  - [x] Memory management
 - **Algorithms**
-  - Sorting: Bubble, Insertion, Merge, Quick
-  - Searching: Linear, Binary
+  - Sorting:
+    - [x] Bubble
+    - [ ] Insertion
+    - [ ] Merge
+    - [ ] Quick
+  - Searching:
+    - [ ] Linear
+    - [ ] Binary
 
 ### 🔗 Linked Lists
 - **Types**
