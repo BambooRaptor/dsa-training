@@ -10,7 +10,7 @@ func SortIntAsc(a int, b int) bool {
 	return a > b
 }
 
-type ShouldLRSwap[T any] func(T, T) bool
+type ShouldLRSwap[T any] func(left T, right T) bool
 
 // slrs => should left <=> right swap?
 func SortBubble[T any](arr *[]T, slrs ShouldLRSwap[T]) {
